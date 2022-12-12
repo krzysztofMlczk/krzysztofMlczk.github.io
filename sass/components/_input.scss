@@ -1,0 +1,10 @@
+@use "../abstracts" as *;
+
+.input {
+  padding: 10px 13px;
+  border: 1px solid $accent;
+
+  &:focus {
+    border: 1px solid $egg-blue;
+  }
+}

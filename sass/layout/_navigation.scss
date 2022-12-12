@@ -1,0 +1,64 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the navbar of the application.
+// -----------------------------------------------------------------------------
+@use "../abstracts" as *;
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+
+  &__logo {
+    color: $white;
+    font: normal 700 30px / 37px $font-montserrat;
+  }
+
+  &__links {
+    display: none;
+    gap: 30px;
+    justify-content: space-between;
+
+    @include md {
+      display: flex;
+    }
+  }
+
+  &__hamburger {
+    cursor: pointer;
+    display: block;
+
+    @include md {
+      display: none;
+    }
+
+    path {
+      transition: fill ease-in-out 0.2s;
+      fill: $white;
+    }
+
+    &:hover path {
+      fill: $daisy-yellow;
+    }
+  }
+
+  &__link {
+    font: normal 400 14px / 17px $font-montserrat;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $white;
+    padding: 10px;
+
+    @include on-event {
+      color: $daisy-yellow;
+      transition: ease-in 0.2s;
+    }
+
+    &--selected {
+      color: $daisy-yellow;
+      text-decoration: underline;
+      text-underline-offset: 12px;
+      text-decoration-thickness: 3px;
+    }
+  }
+}

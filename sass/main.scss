@@ -1,0 +1,20 @@
+// 1. Configuration
+@use "abstracts";
+
+// 2. Vendors [external styles e.g. reset/normalize]
+@use "vendors";
+
+// 3. Base styles
+@use "base";
+
+// 4. Components [BEM Blocks]
+@use "components";
+
+// 5. Layout [BEM Blocks only related to layout]
+@use "layout";
+
+// 6. Sections' specific styles
+@use "sections";
+
+// 7. Theming [NA for now]
+// @use "themes"

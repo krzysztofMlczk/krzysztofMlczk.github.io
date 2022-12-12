@@ -1,0 +1,95 @@
+@use "../abstracts" as *;
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  @include md {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  @include lg {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: $text-primary;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    text-align: center;
+    text-transform: uppercase;
+    font: normal 700 20px / 25px $font-montserrat;
+
+    @include sm {
+      font-size: 25px;
+      line-height: 30px;
+    }
+
+    @include md {
+      font-size: 30px;
+      line-height: 35px;
+    }
+
+    @include lg {
+      font-size: 40px;
+      line-height: 50px;
+    }
+  }
+
+  &__overline {
+    font: normal 400 14px / 17px $font-kaushan;
+
+    &::first-letter {
+      text-transform: capitalize;
+    }
+
+    @include sm {
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    @include sm {
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    @include lg {
+      font-size: 30px;
+      line-height: 40px;
+    }
+  }
+
+  &__underline {
+    background-color: $meat;
+    height: 3px;
+    width: 60px;
+    margin-top: 0;
+
+    @include sm {
+      margin-top: 10px;
+    }
+
+    @include md {
+      margin-top: 20px;
+    }
+  }
+
+  &__description {
+    width: 80%;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+}

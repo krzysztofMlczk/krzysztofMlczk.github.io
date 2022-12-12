@@ -1,0 +1,65 @@
+@use "../abstracts" as *;
+
+.hero {
+  background-image: linear-gradient(
+      180deg,
+      rgba($meat, 0.9),
+      rgba($daisy-yellow, 0.9)
+    ),
+    url("../../public/resources/eagle.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  max-height: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  color: $white;
+
+  @include md {
+    max-height: none;
+  }
+
+  &__title {
+    text-align: center;
+    text-transform: uppercase;
+    font: normal 800 35px / 37px $font-montserrat;
+
+    @include sm {
+      font-size: 50px;
+      line-height: 55px;
+    }
+
+    @include md {
+      font-size: 100px;
+      line-height: 110px;
+    }
+
+    @include lg {
+      font-size: 150px;
+      line-height: 140px;
+    }
+  }
+
+  &__overline {
+    text-transform: capitalize;
+    font: normal 400 20px / 25px $font-kaushan;
+
+    @include sm {
+      font-size: 30px;
+      line-height: 35px;
+    }
+
+    @include md {
+      font-size: 50px;
+      line-height: 60px;
+    }
+
+    @include lg {
+      font-size: 72px;
+      line-height: 84px;
+    }
+  }
+}

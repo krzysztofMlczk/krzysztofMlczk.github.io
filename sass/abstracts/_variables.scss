@@ -1,0 +1,44 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+/// Font families
+/// Primary font family
+/// @type List
+$font-montserrat: "Montserrat", sans-serif;
+/// Secondary font family
+/// @type List
+$font-kaushan: "Kaushan Script", cursive;
+/// @type List
+$font-roboto: "Roboto", sans-serif;
+
+/// Colors
+/// @type Color
+$meat: hsl(0, 83%, 73%);
+/// @type Color
+$daisy-yellow: hsl(47, 95%, 76%);
+/// @type Color
+$snowdrop: hsl(87, 100%, 91%);
+/// @type Color
+$egg-blue: hsl(169, 56%, 73%);
+/// @type Color
+$text-primary: hsla(0, 0%, 20%);
+/// @type Color
+$text-secondary: hsla(0, 0%, 60%);
+/// @type Color
+$white: hsla(0, 0%, 100%, 1);
+/// @type Color
+$accent: hsla(0, 0%, 90%, 1);
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+  "small": 320px,
+  "medium": 768px,
+  "large": 1024px,
+);
+
+/// Container's maximum width
+/// @type Length
+$max-width: 1180px;

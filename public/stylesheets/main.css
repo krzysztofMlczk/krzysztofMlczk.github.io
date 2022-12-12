@@ -1,0 +1,672 @@
+@import "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap";
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+input,
+button {
+  all: unset;
+}
+
+a {
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/**
+ * Set up a decent box model on the root element
+ */
+html {
+  box-sizing: border-box;
+}
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/**
+ * Main content containers
+ * 1. Make the container full-width with a maximum width
+ * 2. Center it in the viewport
+ * 3. Leave some space on the edges, especially valuable on small screens
+ */
+.container {
+  max-width: 1180px; /* 1 */
+  margin-left: auto; /* 2 */
+  margin-right: auto; /* 2 */
+  padding-left: 20px; /* 3 */
+  padding-right: 20px; /* 3 */
+  width: 100%; /* 1 */
+}
+.container--absolute {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+body {
+  color: hsl(0deg, 0%, 60%);
+  font: normal 15px/24px "Roboto", sans-serif;
+}
+
+.button {
+  font: normal 700 10px/13px "Montserrat", sans-serif;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  color: hsl(0deg, 0%, 100%);
+  text-align: center;
+}
+@media (min-width: 320px) {
+  .button {
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+.button:hover {
+  cursor: pointer;
+}
+.button--primary {
+  background-color: hsl(169deg, 56%, 73%);
+}
+.button--secondary {
+  border: 2px solid hsl(0deg, 0%, 100%);
+  background-color: transparent;
+}
+
+.input {
+  padding: 10px 13px;
+  border: 1px solid hsl(0deg, 0%, 90%);
+}
+.input:focus {
+  border: 1px solid hsl(169deg, 56%, 73%);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+@media (min-width: 768px) {
+  .section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+@media (min-width: 1024px) {
+  .section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+.section__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: hsl(0deg, 0%, 20%);
+  margin-bottom: 20px;
+}
+.section__title {
+  text-align: center;
+  text-transform: uppercase;
+  font: normal 700 20px/25px "Montserrat", sans-serif;
+}
+@media (min-width: 320px) {
+  .section__title {
+    font-size: 25px;
+    line-height: 30px;
+  }
+}
+@media (min-width: 768px) {
+  .section__title {
+    font-size: 30px;
+    line-height: 35px;
+  }
+}
+@media (min-width: 1024px) {
+  .section__title {
+    font-size: 40px;
+    line-height: 50px;
+  }
+}
+.section__overline {
+  font: normal 400 14px/17px "Kaushan Script", cursive;
+}
+.section__overline::first-letter {
+  text-transform: capitalize;
+}
+@media (min-width: 320px) {
+  .section__overline {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+@media (min-width: 320px) {
+  .section__overline {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+@media (min-width: 1024px) {
+  .section__overline {
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+.section__underline {
+  background-color: hsl(0deg, 83%, 73%);
+  height: 3px;
+  width: 60px;
+  margin-top: 0;
+}
+@media (min-width: 320px) {
+  .section__underline {
+    margin-top: 10px;
+  }
+}
+@media (min-width: 768px) {
+  .section__underline {
+    margin-top: 20px;
+  }
+}
+.section__description {
+  width: 80%;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.interactive-card {
+  position: relative;
+  height: 400px;
+  background-color: hsl(169deg, 56%, 73%);
+  text-align: center;
+}
+.interactive-card:hover .interactive-card__overlay {
+  opacity: 1;
+}
+.interactive-card__overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(243, 129, 129, 0.9), rgba(252, 227, 136, 0.9));
+  transition: all ease-in-out 0.2s;
+}
+.interactive-card__photo-wrapper {
+  width: 100%;
+  height: 100%;
+  transition: all ease-in-out 0.2s;
+}
+.interactive-card__photo-wrapper:hover {
+  transform: translate(-10px, -10px);
+}
+.interactive-card__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.interactive-card__photo--shifted {
+  object-position: 20% top;
+}
+.interactive-card__icons-wrapper {
+  background-color: hsl(0deg, 83%, 73%);
+}
+.interactive-card__icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+}
+.interactive-card__icon-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  background-color: hsl(47deg, 95%, 76%);
+  transition: background-color ease-in-out 0.2s;
+}
+.interactive-card__icon-link:hover {
+  background-color: hsl(0deg, 83%, 73%);
+}
+.interactive-card__icon-link:hover .interactive-card__icon path {
+  fill: hsl(0deg, 0%, 100%);
+}
+.interactive-card__icon path {
+  fill: hsl(0deg, 83%, 73%);
+  transition: fill ease-in-out 0.2s;
+}
+.interactive-card__title {
+  text-transform: capitalize;
+  font-family: "Montserrat", sans-serif;
+}
+.interactive-card__subtitle {
+  text-transform: capitalize;
+  font: normal 400 15px/24px "Roboto", sans-serif;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  border-top: 1px solid hsl(0deg, 0%, 90%);
+  padding: 20px 0;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .footer {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0;
+    padding: 10px 0;
+  }
+}
+.footer__copyright {
+  color: hsl(0deg, 0%, 20%);
+  font: 400 14px/17px "Montserrat", sans-serif;
+}
+.footer__link {
+  color: hsl(0deg, 83%, 73%);
+}
+.footer__form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+@media (min-width: 768px) {
+  .footer__form {
+    flex-direction: row;
+    gap: 0;
+  }
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+.navbar__logo {
+  color: hsl(0deg, 0%, 100%);
+  font: normal 700 30px/37px "Montserrat", sans-serif;
+}
+.navbar__links {
+  display: none;
+  gap: 30px;
+  justify-content: space-between;
+}
+@media (min-width: 768px) {
+  .navbar__links {
+    display: flex;
+  }
+}
+.navbar__hamburger {
+  cursor: pointer;
+  display: block;
+}
+@media (min-width: 768px) {
+  .navbar__hamburger {
+    display: none;
+  }
+}
+.navbar__hamburger path {
+  transition: fill ease-in-out 0.2s;
+  fill: hsl(0deg, 0%, 100%);
+}
+.navbar__hamburger:hover path {
+  fill: hsl(47deg, 95%, 76%);
+}
+.navbar__link {
+  font: normal 400 14px/17px "Montserrat", sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: hsl(0deg, 0%, 100%);
+  padding: 10px;
+}
+.navbar__link:hover, .navbar__link:active, .navbar__link:focus, .navbar__link:focus-within {
+  color: hsl(47deg, 95%, 76%);
+  transition: ease-in 0.2s;
+}
+.navbar__link--selected {
+  color: hsl(47deg, 95%, 76%);
+  text-decoration: underline;
+  text-underline-offset: 12px;
+  text-decoration-thickness: 3px;
+}
+
+.mobile-menu {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsl(0deg, 83%, 73%);
+  padding: 30px;
+}
+.mobile-menu--closed {
+  visibility: hidden;
+}
+.mobile-menu__close-icon {
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+.mobile-menu__close-icon:hover path {
+  fill: hsl(47deg, 95%, 76%);
+  transition: fill ease-in-out 0.2s;
+}
+.mobile-menu__close-icon path {
+  fill: hsl(0deg, 0%, 100%);
+}
+.mobile-menu__links {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.mobile-menu__link {
+  cursor: pointer;
+  display: block;
+  text-align: center;
+  padding: 20px;
+  text-transform: capitalize;
+  color: hsl(0deg, 0%, 100%);
+  font: normal 500 30px/35px "Montserrat", sans-serif;
+}
+.mobile-menu__link:hover, .mobile-menu__link:active, .mobile-menu__link:focus, .mobile-menu__link:focus-within {
+  color: hsl(47deg, 95%, 76%);
+  transition: ease-in 0.2s;
+}
+.mobile-menu__link--selected {
+  color: hsl(47deg, 95%, 76%);
+  text-decoration: underline;
+  text-underline-offset: 12px;
+  text-decoration-thickness: 3px;
+}
+
+.hero {
+  background-image: linear-gradient(180deg, rgba(243, 129, 129, 0.9), rgba(252, 227, 136, 0.9)), url("../../public/resources/eagle.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  max-height: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  color: hsl(0deg, 0%, 100%);
+}
+@media (min-width: 768px) {
+  .hero {
+    max-height: none;
+  }
+}
+.hero__title {
+  text-align: center;
+  text-transform: uppercase;
+  font: normal 800 35px/37px "Montserrat", sans-serif;
+}
+@media (min-width: 320px) {
+  .hero__title {
+    font-size: 50px;
+    line-height: 55px;
+  }
+}
+@media (min-width: 768px) {
+  .hero__title {
+    font-size: 100px;
+    line-height: 110px;
+  }
+}
+@media (min-width: 1024px) {
+  .hero__title {
+    font-size: 150px;
+    line-height: 140px;
+  }
+}
+.hero__overline {
+  text-transform: capitalize;
+  font: normal 400 20px/25px "Kaushan Script", cursive;
+}
+@media (min-width: 320px) {
+  .hero__overline {
+    font-size: 30px;
+    line-height: 35px;
+  }
+}
+@media (min-width: 768px) {
+  .hero__overline {
+    font-size: 50px;
+    line-height: 60px;
+  }
+}
+@media (min-width: 1024px) {
+  .hero__overline {
+    font-size: 72px;
+    line-height: 84px;
+  }
+}
+
+.services-grid {
+  display: grid;
+  gap: 50px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+@media (min-width: 768px) {
+  .service-card {
+    flex-direction: row;
+    align-items: start;
+  }
+}
+.service-card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .service-card__text {
+    text-align: left;
+  }
+}
+.service-card__icon {
+  cursor: pointer;
+}
+.service-card__icon:hover path {
+  fill: hsl(0deg, 83%, 73%);
+}
+.service-card__icon path {
+  fill: hsl(169deg, 56%, 73%);
+  transition: fill ease-out 0.1s;
+}
+.service-card__title {
+  color: hsl(0deg, 0%, 20%);
+  font: normal 500 14px/17px "Montserrat", sans-serif;
+  text-transform: uppercase;
+}
+.service-card__description {
+  color: hsl(0deg, 0%, 60%);
+  font: normal 400 15px/24px "Roboto", sans-serif;
+}
+
+.team-grid {
+  display: grid;
+  gap: 20px;
+  width: 100%;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 1024px) {
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

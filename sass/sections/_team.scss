@@ -1,0 +1,12 @@
+@use "../abstracts" as *;
+
+.team-grid {
+  display: grid;
+  gap: 20px;
+  width: 100%;
+  grid-template-columns: 1fr;
+
+  @include lg {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

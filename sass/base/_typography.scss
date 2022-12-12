@@ -1,0 +1,9 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide typography.
+// -----------------------------------------------------------------------------
+@use "../abstracts";
+
+body {
+  color: abstracts.$text-secondary;
+  font: normal 15px / 24px abstracts.$font-roboto;
+}

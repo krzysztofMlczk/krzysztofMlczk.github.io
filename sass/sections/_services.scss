@@ -1,0 +1,62 @@
+@use "../abstracts" as *;
+
+.services-grid {
+  display: grid;
+  gap: 50px;
+  grid-template-columns: 1fr;
+
+  @include md {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include lg {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  @include md {
+    flex-direction: row;
+    align-items: start;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+
+    @include md {
+      text-align: left;
+    }
+  }
+
+  &__icon {
+    cursor: pointer;
+    &:hover {
+      path {
+        fill: $meat;
+      }
+    }
+    path {
+      fill: $egg-blue;
+      transition: fill ease-out 0.1s;
+    }
+  }
+
+  &__title {
+    color: $text-primary;
+    font: normal 500 14px / 17px $font-montserrat;
+    text-transform: uppercase;
+  }
+
+  &__description {
+    color: $text-secondary;
+    font: normal 400 15px / 24px $font-roboto;
+  }
+}
